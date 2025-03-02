@@ -1,4 +1,4 @@
-CREATE FUNCTION Check_Even_Odd RETURN VARCHAR2 IS
+CREATE OR REPLACE FUNCTION Check_Even_Odd RETURN VARCHAR2 IS
     even_count NUMBER;
     odd_count NUMBER;
 BEGIN
@@ -13,4 +13,3 @@ BEGIN
         RETURN 'EQUAL';
     END IF;
 END;
-/
