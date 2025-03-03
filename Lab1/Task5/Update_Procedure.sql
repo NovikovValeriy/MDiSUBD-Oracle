@@ -11,7 +11,6 @@ BEGIN
     ELSE
         UPDATE MyTable SET val = p_new_val WHERE id = p_id;
         COMMIT;
-        DBMS_OUTPUT.PUT_LINE('Row updated: ID = ' || p_id || ', VAL = ' || p_new_val);
     END IF;
 EXCEPTION
     WHEN OTHERS THEN

@@ -6,7 +6,7 @@ CREATE OR REPLACE FUNCTION Annual_Reward(
     v_total_compensation NUMBER;
 BEGIN
     IF p_salary <= 0 THEN
-        DBMS_OUTPUT.PUT_LINE('Error: salary cannot be negative.');
+        DBMS_OUTPUT.PUT_LINE('Error: salary cannot be zero or negative.');
         RETURN NULL;
     ELSIF p_bonus_percent < 0 THEN
         DBMS_OUTPUT.PUT_LINE('Error: bonus percent cannot be negative.');

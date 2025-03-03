@@ -10,7 +10,6 @@ BEGIN
     ELSE
         DELETE FROM MyTable WHERE id = p_id;
         COMMIT;
-        DBMS_OUTPUT.PUT_LINE('Row deleted: ID = ' || p_id);
     END IF;
 EXCEPTION
     WHEN OTHERS THEN
