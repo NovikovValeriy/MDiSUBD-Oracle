@@ -14,7 +14,7 @@ BEGIN
 
     EXECUTE IMMEDIATE 'ALTER TRIGGER students_audit_trigger DISABLE';
     EXECUTE IMMEDIATE 'ALTER TRIGGER groups_audit_trigger DISABLE';
-    EXECUTE IMMEDIATE 'ALTER TRIGGER groups_cascade_delete DISABLE';
+    EXECUTE IMMEDIATE 'ALTER TRIGGER groups_cascade_delete_trigger DISABLE';
 
    FOR rec IN (
         SELECT * 
@@ -85,13 +85,13 @@ BEGIN
 
     EXECUTE IMMEDIATE 'ALTER TRIGGER students_audit_trigger ENABLE';
     EXECUTE IMMEDIATE 'ALTER TRIGGER groups_audit_trigger ENABLE';
-    EXECUTE IMMEDIATE 'ALTER TRIGGER groups_cascade_delete ENABLE';
+    EXECUTE IMMEDIATE 'ALTER TRIGGER groups_cascade_delete_trigger ENABLE';
 
     COMMIT;
 EXCEPTION
     WHEN OTHERS THEN
         EXECUTE IMMEDIATE 'ALTER TRIGGER students_audit_trigger ENABLE';
         EXECUTE IMMEDIATE 'ALTER TRIGGER groups_audit_trigger ENABLE';
-        EXECUTE IMMEDIATE 'ALTER TRIGGER groups_cascade_delete ENABLE';
+        EXECUTE IMMEDIATE 'ALTER TRIGGER groups_cascade_delete_trigger ENABLE';
         RAISE;
 END RESTORE_DATA;
